@@ -11,6 +11,10 @@ unset HTTP_PROXY
 unset HTTPS_PROXY
 unset ALL_PROXY
 
+# 复制用户API密钥和数据到工作目录
+cp -f /Users/lin/Desktop/userApiKey.json /Users/lin/workspace/rl-swarm/modal-login/temp-data/userApiKey.json
+cp -f /Users/lin/Desktop/userData.json /Users/lin/workspace/rl-swarm/modal-login/temp-data/userData.json
+
 # 清除程序日志的函数
 clear_program_logs() {
     log "清空主程序日志文件"
