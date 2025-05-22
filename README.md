@@ -175,12 +175,16 @@ This is a daemon script for monitoring and managing the RL-Swarm program, which 
 
 ### 中文版
 
-1. 启动监控脚本：
+1.修改配置
+    - `LOG_FILE`：监控日志文件路径, 改为你自己的目录
+    - `WORKSPACE`：RL-Swarm工作目录路径，改为你自己的目录，
+    - 'trap cleanup EXIT'  进入工程找到run_rl_swarm.sh 文件这行内容，删除的这一行内容，保存
+2. 启动监控脚本：
    ```bash
    ./monitor_rl_swarm.sh
    ```
 
-2. 建议在后台运行或使用screen/tmux会话：
+3. 建议在后台运行或使用screen/tmux会话：
    ```bash
    nohup ./monitor_rl_swarm.sh > nohup.out 2>&1 &
    ```
@@ -191,19 +195,23 @@ This is a daemon script for monitoring and managing the RL-Swarm program, which 
    # 按 Ctrl+A 然后按 D 分离会话
    ```
 
-3. 查看监控日志：
+4. 查看监控日志：
    ```bash
    tail -f monitor.log
    ```
 
 ### English Version
 
-1. Start the monitoring script:
+1.
+    - `LOG_FILE`: Path to the monitoring log file
+    - `WORKSPACE`: Path to the RL-Swarm working directory
+    - 'trap cleanup EXIT'  Enter the project, locate the run_rl_swarm.sh file, delete this line of content, and save.
+2. Start the monitoring script:
    ```bash
    ./monitor_rl_swarm.sh
    ```
 
-2. Recommended to run in background or use screen/tmux sessions:
+3. Recommended to run in background or use screen/tmux sessions:
    ```bash
    nohup ./monitor_rl_swarm.sh > nohup.out 2>&1 &
    ```
@@ -214,7 +222,7 @@ This is a daemon script for monitoring and managing the RL-Swarm program, which 
    # Press Ctrl+A then D to detach the session
    ```
 
-3. View monitoring logs:
+4. View monitoring logs:
    ```bash
    tail -f monitor.log
    ```
@@ -226,7 +234,8 @@ This is a daemon script for monitoring and managing the RL-Swarm program, which 
 脚本顶部包含可自定义的配置参数：
 
 - `LOG_FILE`：监控日志文件路径
-- `WORKSPACE`：RL-Swarm工作目录路径
+- `WORKSPACE`：RL-Swarm工作目录路径，改为你自己的目录，
+- 'trap cleanup EXIT'  删除run_rl_swarm.sh 的这一行内容
 
 您可以根据需要修改这些变量以适应您的环境。
 
@@ -236,6 +245,7 @@ The script contains customizable configuration parameters at the top:
 
 - `LOG_FILE`: Path to the monitoring log file
 - `WORKSPACE`: Path to the RL-Swarm working directory
+- 'trap cleanup EXIT'  Enter the project, locate the run_rl_swarm.sh file, delete this line of content, and save.
 
 You can modify these variables as needed to suit your environment.
 
@@ -262,3 +272,5 @@ You can modify these variables as needed to suit your environment.
 
 3. **Problem**: Network connection check fails
    **Solution**: Verify your network connection status or modify the detection URL in the check_network function
+
+x: https://x.com/MornikaReke
